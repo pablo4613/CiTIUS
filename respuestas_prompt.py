@@ -43,9 +43,6 @@ for i in range(1,len(preguntas)):
 	preguntas[i]=re.sub(r".*punto.*","",preguntas[i]) #eliminamos todos los parrafos que traten sobre puntuacion	
 	preguntas[i]=re.sub("\n+","\n\n",preguntas[i]) #eliminamos grades espacios en blanco
 	preguntas[i]=re.sub(r"\n[\w.\- <,/]*[iI]mage[\w.\- >,]*\n","",preguntas[i]) #eliminamos el texto que queda en las imagenes
-	#print('Pregunta '+str(i)+': \n\n'+preguntas[i])
-	#print('\n\nRespuesta: \n\n'+respuesta(prompt+'<'+preguntas[i])+'>')
-	#print('\n\n-------------------------------------\n')
 	file.add_paragraph('Pregunta '+str(i)+': \n\n'+preguntas[i]+'\n\n\nRespuesta '+str(i)+': \n\n'+respuesta(prompt+'<'+preguntas[i])+'>')
 	if i!=len(preguntas):
 		file.add_page_break()
